@@ -1,0 +1,93 @@
+﻿@model ETradingSystem.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<style>
+    .details-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+        .details-container h2 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .details-container dl {
+            margin-bottom: 20px;
+        }
+
+            .details-container dl dt {
+                font-weight: bold;
+            }
+
+            .details-container dl dd {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+    .back-link {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        .back-link a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+            .back-link a:hover {
+                background-color: #0056b3;
+            }
+</style>
+
+<div class="details-container">
+    <h2>Details</h2>
+    <div>
+        <h4>Product</h4>
+        <hr />
+        <dl>
+            <dt>@Html.DisplayNameFor(model => model.Product_Name)</dt>
+            <dd>@Html.DisplayFor(model => model.Product_Name)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Brand)</dt>
+            <dd>@Html.DisplayFor(model => model.Brand)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Color)</dt>
+            <dd>@Html.DisplayFor(model => model.Color)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Price)</dt>
+            <dd>@Html.DisplayFor(model => model.Price)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Available_Stock)</dt>
+            <dd>@Html.DisplayFor(model => model.Available_Stock)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Status)</dt>
+            <dd>@Html.DisplayFor(model => model.Status)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.isdeleted)</dt>
+            <dd>@Html.DisplayFor(model => model.isdeleted)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.ImageURL)</dt>
+            <dd>@Html.DisplayFor(model => model.ImageURL)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Vendor.Vendor_Name)</dt>
+            <dd>@Html.DisplayFor(model => model.Vendor.Vendor_Name)</dd>
+        </dl>
+    </div>
+    <div class="back-link">
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn-back" })
+    </div>
+</div>

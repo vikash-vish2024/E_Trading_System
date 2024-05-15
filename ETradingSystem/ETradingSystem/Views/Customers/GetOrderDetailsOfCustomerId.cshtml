@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ETradingSystem.Models.Order>
+
+@{
+    ViewBag.Title = "GetOrderDetailsOfCustomerId";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+<h2>Placed Order Information</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Delivery_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Payment_Mode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.Customer_Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Delivery_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Order_Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Payment_Mode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.Customer_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Back to List", "Index","Products")
+
+        </td>
+    </tr>
+}
+
+</table>
