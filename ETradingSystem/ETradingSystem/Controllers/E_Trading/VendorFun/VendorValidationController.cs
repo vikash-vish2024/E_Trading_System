@@ -64,7 +64,7 @@ namespace ETradingSystem.Controllers.E_Trading.VendorFun
         {
             try
             {
-                var vendor = db.Vendors.FirstOrDefault(x => x.Vendor_Email == email && x.Password == password);
+                var vendor = db.Vendors.FirstOrDefault(x => x.Vendor_Email == email && x.Passowrd == password);
                 if (vendor != null && vendor.Status == "Active")
                 {
                     return true;
